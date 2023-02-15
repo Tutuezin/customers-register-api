@@ -1,7 +1,10 @@
 import { Request, Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
-import { missingHeaderError, unauthorizedError } from "../errorMiddleware";
+import {
+  missingHeaderError,
+  unauthorizedError,
+} from "@middlewares/errorMiddleware";
 
 dotenv.config();
 
@@ -28,4 +31,3 @@ export async function validateToken(
     throw unauthorizedError("Token");
   }
 }
-
