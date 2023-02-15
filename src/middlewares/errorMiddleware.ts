@@ -6,7 +6,7 @@ interface Error {
 }
 
 //422
-export function unprocessableError(error: string[]): Error {
+export function unprocessableError(error: string[] | string): Error {
   return { type: "error_unprocessable_entity", message: error };
 }
 
