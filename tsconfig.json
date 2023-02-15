@@ -15,7 +15,8 @@
       "@controllers/*": ["./src/controllers/*"],
       "@repositories/*": ["./src/repositories/*"],
       "@database": ["./src/config/database"],
-      "@middlewares/*": ["./src/middlewares/*"]
+      "@middlewares/*": ["./src/middlewares/*"],
+      "@services/*": ["./src/services/*"]
     }
   }
 }
