@@ -30,7 +30,7 @@ export function notFoundError(value: string): Error {
 export function conflictError(value: string): Error {
   return {
     type: "error_conflict",
-    message: `${value} already exists`,
+    message: `${value} is already registered`,
   };
 }
 
