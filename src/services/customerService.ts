@@ -5,11 +5,18 @@ import * as customerUtils from "@utils/customerUtils";
 export async function customerRegister(
   customerData: customerTypes.ICustomerData
 ) {
-  const isCpfRegistered = await customerRepository.findCpf(customerData.cpf);
+  //Transforma CPF  Entrada: 123.123.123-12 -> Saida: 12312312312
+  const cpfReplaced = customerUtils.cpfReplacer(customerData.cpf);
+  //Valida CPF
+  customerUtils.cpfValidator(cpfReplaced);
 
+  //Busca CPF no banco de dados
+  const isCpfRegistered = await customerRepository.findCpf(cpfReplaced);
   customerUtils.verifyCpfisCpfRegistered(isCpfRegistered);
 
-  return await customerRepository.insertCustomer({
+  return "Ok";
+
+  await customerRepository.insertCustomer({
     name: customerData.name,
     cpf: customerData.cpf,
   });
