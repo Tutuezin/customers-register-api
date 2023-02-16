@@ -25,7 +25,7 @@ export async function findCustomers(
 ) {
   const [customers, total] = await prisma.$transaction([
     prisma.customer.findMany({
-      select: { name: true, cpf: true },
+      select: { name: true, cpf: true, dateBirth: true },
       where: {
         cpf: {
           contains: search,
