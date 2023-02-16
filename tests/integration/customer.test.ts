@@ -50,4 +50,17 @@ describe("Integration tests", () => {
 
     expect(status).toEqual(422);
   });
+
+  it("Should return 422 if registering a customer with an invalid cpf", async () => {
+    const body: { name: string; dateBirth: string; cpf: string } = {
+      name: "Arthur",
+      dateBirth: "06/11/2001",
+      cpf: "112.146.774-55",
+    };
+
+    const result = await supertest(app).post("/customer/cpf").send(body);
+    const textError = result.text;
+
+    expect(textError).toEqual("Cpf is invalid");
+  });
 });
