@@ -6,6 +6,7 @@
   "author": "Arthur Alcantara <arthuralcantara.dev@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "test": "jest --no-cache",
     "build": "tsc && npx prisma migrate deploy",
     "start": "node dist/src/server.js",
     "dev": "nodemon ./src/server.ts"
@@ -13,24 +14,25 @@
   "dependencies": {
     "@joi/date": "^2.1.0",
     "@prisma/client": "4.4.0",
-    "bcrypt": "^5.1.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-async-errors": "^3.1.1",
     "joi": "^17.7.1",
-    "jsonwebtoken": "^9.0.0",
     "pg": "^8.9.0"
   },
   "devDependencies": {
-    "@types/bcrypt": "^5.0.0",
     "@types/cors": "^2.8.13",
     "@types/express": "^4.17.17",
-    "@types/jsonwebtoken": "^9.0.1",
+    "@types/jest": "^29.4.0",
     "@types/node": "^18.13.0",
     "@types/pg": "^8.6.6",
+    "@types/supertest": "^2.0.12",
+    "jest": "^29.4.3",
     "nodemon": "^2.0.20",
     "prisma": "4.4.0",
+    "supertest": "^6.3.3",
+    "ts-jest": "^29.0.5",
     "ts-node": "^10.9.1",
     "tsconfig-paths": "^4.1.2",
     "typescript": "^4.9.5"
