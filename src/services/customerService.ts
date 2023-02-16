@@ -18,6 +18,7 @@ export async function customerRegister(
 
   return await customerRepository.insertCustomer({
     name: customerData.name,
+    dateBirth: customerData.dateBirth,
     cpf: cpfReplaced,
   });
 }

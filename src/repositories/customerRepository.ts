@@ -11,6 +11,7 @@ export async function insertCustomer(
   return await prisma.customer.create({
     select: {
       name: true,
+      dateBirth: true,
       cpf: true,
     },
     data: customerData,
