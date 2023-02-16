@@ -25,11 +25,24 @@ describe("Integration tests", () => {
     expect(status).toEqual(201);
   });
 
-  it("Should return 422 of registering a client with incorrect date format", async () => {
+  it("Should return 422 of registering a customer with incorrect date format", async () => {
     const body: { name: string; dateBirth: string; cpf: string } = {
       name: "Arthur",
       dateBirth: "06-11-2001",
       cpf: "112.146.774-10",
+    };
+
+    const result = await supertest(app).post("/customer/cpf").send(body);
+    const status = result.status;
+
+    expect(status).toEqual(422);
+  });
+
+  it("Should return 422 if registering a customer with incorrect cpf format", async () => {
+    const body: { name: string; dateBirth: string; cpf: string } = {
+      name: "Arthur",
+      dateBirth: "06/11/2001",
+      cpf: "112.146-774/10",
     };
 
     const result = await supertest(app).post("/customer/cpf").send(body);
