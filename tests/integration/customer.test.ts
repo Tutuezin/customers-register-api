@@ -63,4 +63,18 @@ describe("Integration tests", () => {
 
     expect(textError).toEqual("Cpf is invalid");
   });
+
+  it("It should return 409 when trying to register a customer who already has a registered cpf", async () => {
+    const body: { name: string; dateBirth: string; cpf: string } = {
+      name: "Arthur",
+      dateBirth: "06/11/2001",
+      cpf: "112.146.774-10",
+    };
+
+    await supertest(app).post("/customer/cpf").send(body);
+    const result = await supertest(app).post("/customer/cpf").send(body);
+    const status = result.status;
+
+    expect(status).toEqual(409);
+  });
 });
