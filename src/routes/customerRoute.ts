@@ -10,5 +10,6 @@ customerRoute.post(
   validateSchema(customerInfos),
   customerControler.customerRegister
 );
+customerRoute.get("/customers", customerControler.findCustomers);
 
 export default customerRoute;

@@ -21,3 +21,13 @@ export async function customerRegister(
     cpf: cpfReplaced,
   });
 }
+
+export async function findCustomers(
+  search: string,
+  take: number,
+  skip: number
+) {
+  const cpfReplaced = customerUtils.cpfReplacer(search);
+
+  return await customerRepository.findCustomers(cpfReplaced, take, skip);
+}
