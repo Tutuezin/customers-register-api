@@ -77,4 +77,20 @@ describe("Integration tests", () => {
 
     expect(status).toEqual(409);
   });
+
+  it("Should return a customer who has been created", async () => {
+    const body: { name: string; dateBirth: string; cpf: string } = {
+      name: "Arthur",
+      dateBirth: "06/11/2001",
+      cpf: "112.146.774-10",
+    };
+
+    await supertest(app).post("/customer/cpf").send(body);
+    const result = await supertest(app).get("/customers?search=112.146.774-10");
+    const dbOutput = result.body;
+
+    expect(dbOutput.customers[0].cpf).toEqual(
+      customerUtils.cpfReplacer(body.cpf)
+    );
+  });
 });
