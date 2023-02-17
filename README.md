@@ -105,19 +105,33 @@ Clone o repositório
 Instale as dependências
 
 ```bash
-  yarn install
+  yarn install ou npm install
 ```
 
 Crie o banco de dados
 
 ```bash
-  yarn dev:migration
+  yarn dev:migration ou npm run dev:migration
 ```
 
-Start the server
+Inicie o servidor
 
 ```bash
-  yarn dev
+  yarn dev ou npm run dev
+```
+
+## Run Tests
+
+Rode os testes
+
+```bash
+  yarn test ou npm run test
+```
+
+Para popular novamente o banco de dados utilize
+
+```bash
+  yarn dev:seed ou npm run dev:seed
 ```
 
 </br>
