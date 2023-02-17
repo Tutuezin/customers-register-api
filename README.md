@@ -38,6 +38,8 @@ Um projeto typescript designado para cadastro de clientes através do CPF.
 
 ## API Reference
 
+`Utilize o arquivo customer_register_postman_collection.json para importar a coleção plataforma de API REST`
+
 ### Cria cliente
 
 ```http

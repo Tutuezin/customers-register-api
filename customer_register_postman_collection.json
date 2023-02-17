@@ -1,0 +1,87 @@
+{
+	"info": {
+		"_postman_id": "37ed0742-a1ab-4824-bba4-e8288b66c96a",
+		"name": "Customer Register",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25878191"
+	},
+	"item": [
+		{
+			"name": "insertCustomer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Arthur\",\n    \"dateBirth\": \"06/11/2001\",\n    \"cpf\": \"112.146.774-10\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4000/customer/cpf",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"customer",
+						"cpf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findCustomers",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Arthur\",\n    \"cpf\": \"111.444.777-35\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4000/customers?search=&take=&skip=",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"customers"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": ""
+						},
+						{
+							"key": "take",
+							"value": ""
+						},
+						{
+							"key": "skip",
+							"value": ""
+						},
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
