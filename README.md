@@ -138,6 +138,30 @@ Para popular novamente o banco de dados utilize
 
 </br>
 
+## Run with Docker
+
+Instale as dependencias e inicie o servidor
+
+```bash
+  docker compose up ou docker-compose up
+```
+
+Rode os testes
+
+```bash
+  docker container exec -it customers_node yarn test
+                        ou
+  docker container exec -it customers_node npm run test
+```
+
+Para popular novamente o banco de dados utilize
+
+```bash
+  docker container exec -it customers_node yarn dev:seed
+                        ou
+  docker container exec -it customers_node npm run dev:seed
+```
+
 ## Lessons Learned
 
 Nesse projeto aprendi a fazer manualmente um algoritmo de validação de CPF.
