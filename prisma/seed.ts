@@ -10,7 +10,7 @@ async function main() {
   for (let i = 0; i < 10; i++) {
     const body: { name: string; dateBirth: string; cpf: string } = {
       name: `${faker.name.firstName()} ${faker.name.lastName()}`,
-      dateBirth: `0${i + 1}/11/200${i + 1}`,
+      dateBirth: i < 9 ? `0${i + 1}/11/200${i + 1}` : `${i + 1}/11/20${i + 1}`,
       cpf: faker.br.cpf(),
     };
     await prisma.customer.create({
