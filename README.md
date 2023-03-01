@@ -90,9 +90,19 @@ GET /customers?search=&take=&skip=
 
 Para executar este projeto, você precisará adicionar as seguintes variáveis ​​de ambiente em seu arquivo .env
 
-`DATABASE_URL = postgres://UserName:Password@Hostname:5432/DatabaseName`
+`DATABASE_URL=postgres://${DATABASE_USER}:${DATABASE_PASSWORD}@${DATABASE_HOSTNAME}:5432/${DATABASE_DB}`
 
 `PORT = number #recommended:5000`
+
+`DATABASE_USER = string `
+
+`DATABASE_PASSWORD = string `
+
+`DATABASE_HOSTNAME = string #recommended: se for utilizar docker para rodar o projeto, utilize "db" como nome por conta que o db é o nome do service no docker-compose `
+
+`DATABASE_DB = string`
+
+
 
 </br>
 
